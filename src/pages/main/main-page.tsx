@@ -17,14 +17,13 @@ export const MainPage = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [vacanciesList, setVacanciesList] = useState<VacancyType[]>();
   const [totalVacancies, setTotalVacancies] = useState<number>();
-  const [currentPage, setCurrentPage] = useState<number>(1);
   const [searchValue, setSearchValue] = useState<string>('');
 
   const screenWidth = useScreenWidth();
 
   const paginationSize = screenWidth && screenWidth <= 450 ? 'sm' : 'md';
 
-  const { filterParams } = useContext(BurgerContext);
+  const { filterParams, currentPage, setCurrentPage } = useContext(BurgerContext);
 
   const ITEMS_PER_PAGE = 4;
   const pagesCount = totalVacancies ? Math.ceil(totalVacancies/ITEMS_PER_PAGE) : 1;
@@ -78,7 +77,7 @@ export const MainPage = () => {
             <div className={styles.loader_wrapper}> 
               <Loader variant='dots' />
             </div>}
-            <SearchPanel setSearchValue={setSearchValue} setCurrentPage={setCurrentPage} />
+            <SearchPanel setSearchValue={setSearchValue} />
     
             <VacanciesCardsList vacanciesList={vacanciesList} />
     

@@ -1,15 +1,18 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useContext, useState } from 'react';
 
 import { useScreenWidth } from '../../hooks/use-screen-width';
 import { SearchPanelPropsType } from '../../types/props-type';
 
 import styles from './search-panel.module.scss';
+import { BurgerContext } from '../../context/context';
 
 
-export const SearchPanel = ({ setSearchValue, setCurrentPage }: SearchPanelPropsType ) => {
+export const SearchPanel = ({ setSearchValue }: SearchPanelPropsType ) => {
   const [inputValue, setInputValue] = useState<string>('');
 
   const screenWidth = useScreenWidth();
+
+  const { setCurrentPage } = useContext(BurgerContext);
 
   const searchPlacholderText = screenWidth && screenWidth <= 410
           ? 'Введите название...'
@@ -20,7 +23,7 @@ export const SearchPanel = ({ setSearchValue, setCurrentPage }: SearchPanelProps
   };
   const handleSubmit = () => {
     setSearchValue(inputValue);
-    setCurrentPage(0);
+    setCurrentPage(1);
   };
   return (
     <form className={styles.panel_form}>

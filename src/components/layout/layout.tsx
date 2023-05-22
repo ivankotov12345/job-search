@@ -14,6 +14,7 @@ import styles from './layout.module.scss';
 export const Layout = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [filterParams, setFilterParams] = useState<FilterParamsType>({
     category_key: '',
     payment_from: '',
@@ -72,7 +73,7 @@ export const Layout = () => {
     }
   }, []);
   return (
-    <BurgerContext.Provider value={{ isBurgerOpen, setIsBurgerOpen, filterParams, setFilterParams }}>
+    <BurgerContext.Provider value={{ isBurgerOpen, setIsBurgerOpen, filterParams, setFilterParams, currentPage, setCurrentPage }}>
     <div className={isBurgerOpen 
                       ? classNames(styles.layout_wrapper, styles.layout_overflow)
                       : styles.layout_wrapper}>

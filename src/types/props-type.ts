@@ -8,7 +8,6 @@ export type VacancyCardsPropsType = {
 
 export type SearchPanelPropsType = {
     setSearchValue: React.Dispatch<React.SetStateAction<string>>,
-    setCurrentPage: React.Dispatch<React.SetStateAction<number>>,
 }
 
 export type FilterPanelPropsType = {

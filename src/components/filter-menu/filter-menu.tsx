@@ -20,7 +20,7 @@ export const FilterMenu = () => {
   const [paymentToValue, setPaymentToValue] = useState<number | ''>('');
   const [filterMenuActive, setFilterMenuActive] = useState<boolean>(false);
 
-  const { setFilterParams, setIsBurgerOpen } = useContext(BurgerContext);
+  const { setFilterParams, setIsBurgerOpen, setCurrentPage } = useContext(BurgerContext);
 
   const agrementValue = paymentFromValue || paymentFromValue ? 1 : ''; 
 
@@ -52,6 +52,7 @@ export const FilterMenu = () => {
       no_agreement: agrementValue,
     });
     setIsBurgerOpen(false);
+    setCurrentPage(1);
   };
 
   const filterMenuToggle = () => {
@@ -73,9 +74,10 @@ export const FilterMenu = () => {
       no_agreement: '',
     });
     setIsBurgerOpen(false);
+    setCurrentPage(1);
   };
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <form className={styles.form}>
       <div className={styles.head_wrapper}>
         <h2 className={styles.form_header}>Фильтры</h2>
         <button type='button' className={styles.remove_filters_button} onClick={onRemoveFiltersClick}>

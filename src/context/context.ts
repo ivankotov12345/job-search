@@ -6,6 +6,8 @@ export type BurgerContextType = {
     setIsBurgerOpen: (isOpen: boolean) => void,
     filterParams: FilterParamsType,
     setFilterParams: (filterParams: FilterParamsType) => void,
+    currentPage: number,
+    setCurrentPage: (page: number) => void
 }
 
 export const BurgerContext = createContext<BurgerContextType>({ 
@@ -17,5 +19,7 @@ export const BurgerContext = createContext<BurgerContextType>({
         payment_to: '',
         no_agreement: 0
       },
-    setFilterParams: () => {}, });
+    setFilterParams: () => {},
+    currentPage: 1,
+    setCurrentPage: () => {} });
     
