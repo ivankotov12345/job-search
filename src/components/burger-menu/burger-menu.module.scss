@@ -20,6 +20,9 @@
         background-color: rgba($color-grey-500, 0.5);
         backdrop-filter: blur(10px);
     }
+    @media (orientation: landscape) {
+        height: 170%;
+    }
 }
 
 .aside_outer_active {
