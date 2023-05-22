@@ -1,0 +1,112 @@
+@use '../../scss/' as *;
+
+.form {
+    @include block-white;
+    width: 315px;
+    border-radius: 12px;
+    padding: 20px;
+    @media (max-width: 500px) {
+        margin: 0 auto;
+    }
+}
+
+.head_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.form_header {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0;
+    cursor: default;
+}
+
+.input_wrapper {
+    height: 42px;
+}
+
+.remove_filters_button {
+    border: none;
+    background-color: transparent;
+    color: $color-grey-500;
+    font-weight: 500;
+    font-size: $text-small;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    .clear {
+        background-color: $color-grey-500;
+        width: 16px;
+        height: 16px;
+        mask: url(./assets/svg/clear.svg) no-repeat center;
+    }
+    &:hover {
+        color: $color-blue-400;
+
+        .clear {
+            background-color: $color-blue-400;
+        }
+    }
+}
+
+.right_section {
+    pointer-events: none;
+}
+
+.dropdown {
+    margin-top: 8px;
+    border: none;
+}
+
+.dropdown_item {
+    @include text_regular;
+    font-size: $text-small;
+    border-radius: 8px;
+    &:hover {
+        background-color: $color-blue-100;
+    }
+}
+
+.label {
+    font-weight: 700;
+    font-size: $text-regular;
+    line-height: 19px;
+    color: $color-black;
+    margin-bottom: 8px;
+}
+
+.salary_wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    caret-color: $color-blue-500-main;
+}
+
+.number_right_section {
+    margin: 6px 4px 6px 0;
+}
+
+.salary_range_control {
+    border: none;
+    color: $color-grey-500;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-white !important;
+        color: $color-blue-400;
+    }
+    &:active {
+        color: $color-blue-500-main;
+    }
+}
+
+.button_submit {
+    @include button;
+    height: 40px;
+    width: 100%;
+    margin-top: 20px;
+}

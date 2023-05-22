@@ -1,0 +1,41 @@
+@use '../../scss/' as *;
+
+.navigation {
+    margin-left: 280px;
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        column-gap: 60px;
+        padding: 0;
+    }
+
+    @media (max-width: 900px) {
+        margin: 20px 0;
+        @include block-white;
+        border-radius: 12px;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        ul{
+            flex-direction: column;
+            text-align: center;
+            row-gap: 30px;
+            padding: 0 10px;
+        }
+    }
+}
+
+.nav_link {
+    @include text_regular;
+    font-size: $text-regular;
+    text-decoration: none;
+    @media (max-width: 900px) {
+        font-size: $header-regular;
+    }
+}
+
+.active {
+    font-weight: 500;
+    color: $color-blue-500-main;
+}

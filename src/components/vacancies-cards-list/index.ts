@@ -1,0 +1,1 @@
+export { VacanciesCardsList } from './vacancies-cards-list';

@@ -1,0 +1,52 @@
+@use '../../scss' as *;
+
+.vacancies_list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    width: 100%;
+    min-height: 598px;
+    li {
+        cursor: pointer;
+    }
+}
+
+.vacancy_link {
+    text-decoration: none;
+    color: $color-black;
+}
+
+.vacancy_title {
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    font-weight: 600;
+    font-size: $header-regular;
+    color: $color-blue-500-main;
+}
+
+.salary {
+    font-weight: 600;
+    font-size: $text-regular;
+    line-height: 20px;
+    color: $color-black;
+    @media (max-width: 600px) {
+        grid-area: a;
+        font-size: $text-small;
+    }
+}
+
+.text {
+    font-weight: 400;
+    font-size: $text-regular;
+    line-height: 20px;
+    color: $color-black;
+    @media (max-width: 600px) {
+        grid-area: c;
+        font-size: $text-small;
+    }
+}

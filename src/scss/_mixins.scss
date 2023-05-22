@@ -1,0 +1,62 @@
+@use './vars' as *;
+
+@mixin block-position {
+    max-width: 1116px;
+    margin: 0 auto;
+    @media (max-width: 1116px) {
+        margin: 0 40px;
+    }
+    @media (max-width: 450px) {
+        margin: 0 10px;
+    }
+}
+
+@mixin block-white {
+    background: $color-white;
+    border: 1px solid $color-grey-200;
+}
+
+@mixin menu-panel {
+    width: 275px;
+    height: 42px;
+    border: 1px solid $color-grey-300;
+    border-radius: 8px;
+}
+
+@mixin focus-panel {
+    &:focus {
+        outline: none;
+        border: 1px solid $color-blue-500-main;
+    }
+}
+
+@mixin text_regular {
+    font-weight: 400;
+    line-height: 20px;
+    color: $color-black;
+}
+
+@mixin text-regular-description {
+    margin: 0;
+    font-weight: 400;
+    font-size: $text-regular;
+    line-height: 22px;
+    color: $color-black;
+    @media (max-width: 600px) {
+        font-size: $text-small;
+    }
+}
+
+@mixin button {
+    background: $color-blue-500-main;
+    border-radius: 8px;
+    color: $color-white;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background: $color-blue-400;
+    }
+    &:active {
+        background: $color-blue-600;
+    }
+}

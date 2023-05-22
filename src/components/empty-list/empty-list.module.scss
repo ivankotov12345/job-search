@@ -1,0 +1,31 @@
+@use '../../scss' as *;
+
+.empty_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 81px;
+    row-gap: 17px;
+}
+
+.empty_header {
+    font-weight: 700;
+    font-size: $size-logo;
+    line-height: 29px;
+    color: $color-header-empty;
+    cursor: default;
+    @media (max-width: 430px) {
+        font-size: $text-regular;
+    }
+}
+
+.home_link {
+    color: $color-blue-600;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: $text-small;
+    background: $color-blue-100;
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+}

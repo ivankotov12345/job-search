@@ -1,0 +1,27 @@
+@use '../../scss/' as *;
+
+.layout_wrapper{
+    display: grid;
+    grid-template-rows: 84px 1fr;
+    height: 100%;
+}
+
+.layout_overflow {
+    overflow: hidden;
+}
+
+.main_outer {
+    background-color: $bg-color-grey;
+}
+.main_inner {
+    @include block-position;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter';
+    column-gap: 28px;
+    padding-top: 40px;
+    padding-bottom: 44px;
+    @media (max-width: 900px) {
+        position: relative;
+    }
+}

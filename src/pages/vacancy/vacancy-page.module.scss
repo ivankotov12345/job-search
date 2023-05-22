@@ -1,0 +1,79 @@
+@use '../../scss/' as *;
+
+.vacancy_title {
+    margin: 0;
+    font-size: $header-big;
+    line-height: 34px;
+    font-weight: 700;
+    color: $color-black;
+    @media (max-width: 600px) {
+        font-size: $header-regular;
+        font-weight: 600;
+        line-height: 30px;
+    }
+    @media (max-width: 400px) {
+        font-size: $text-regular;
+    }
+}
+
+.salary {
+    font-weight: 700;
+    font-size: $header-regular;
+    line-height: 20px;
+    color: $color-black;
+    @media (max-width: 650px) {
+        grid-area: a;
+        font-size: $text-regular;
+    }
+}
+
+.text {
+    font-weight: 400;
+    font-size: $header-regular;
+    line-height: 20px;
+    color: $color-black;
+    @media (max-width: 600px) {
+        grid-area: c;
+        font-size: $text-regular;
+    }
+}
+
+.description_wrapper {
+    @include block-white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 20px;
+    max-width: 773px;
+    @media (max-width: 600px) {
+        margin-top: 10px;
+    }
+    p {
+        @include text-regular-description;
+        margin-bottom: 16px;
+
+        @media (max-width: 600px) {
+            margin-bottom: 10px;
+        }
+        b {
+            font-weight: 700;
+            font-size: $header-regular;
+            line-height: 20px;
+            color: $color-black;
+            @media (max-width: 600px) {
+                font-size: $text-regular;
+            }
+        }
+    }
+
+    ul {
+        margin-bottom: 20px;
+
+        @media (max-width: 600px) {
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        li {
+            @include text-regular-description
+        }
+    }
+}

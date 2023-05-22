@@ -1,0 +1,29 @@
+@use '../../scss' as *;
+
+.header_outer {
+    align-self: center;
+}
+
+.header_inner {
+    @include block-position;
+    display: flex;
+}
+
+.logo_wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.text_logo {
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: $color-black;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    font-size: $size-logo;
+    padding-left: 12px;
+}
+
+
